@@ -18,6 +18,7 @@
 
 ```text
 calculator2/
+|
 ├── app.js
 ├── package.json
 ├── docker-compose.yml
@@ -71,7 +72,9 @@ http://localhost:8082
 http://localhost:8082/admin-login.html
 ```
 
-Какие функции выполняет сайт:
+---
+
+##Какие функции выполняет сайт:
 
 - Показывает список продуктов 1С
 - Считает стоимость с учётом внедрения
