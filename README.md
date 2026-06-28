@@ -15,8 +15,9 @@
 ---
 
 ## Структура проекта
-calculator2/
 
+```text
+calculator2/
 ├── app.js
 ├── package.json
 ├── docker-compose.yml
@@ -34,6 +35,7 @@ calculator2/
 └── server/
     └── database/
         └── init.sql
+```
 
 ---
 
