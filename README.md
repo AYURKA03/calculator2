@@ -24,15 +24,15 @@ calculator2/
 ├── .env
 ├── init.sql
 ├── public/
-│ ├── calculator.html
-│ ├── admin-login.html
-│ ├── admin-dashboard.html
-│ ├── script.js
-│ ├── admin.js
-│ └── style.css
+│   ├── calculator.html
+│   ├── admin-login.html
+│   ├── admin-dashboard.html
+│   ├── script.js
+│   ├── admin.js
+│   └── style.css
 └── server/
-└── database/
-└── init.sql
+    └── database/
+        └── init.sql
 
 ---
 
