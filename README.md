@@ -1,20 +1,92 @@
-# Калькулятор  стоимости продуктов и услуг 1С
+# calculator2
 
-Веб-приложение для автоматизированного расчёта стоимости приобретения программных продуктов 1С и сопутствующих услуг.
-
----
-
-## 🚀 Технологии
-
-![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-4.x-000000?style=for-the-badge&logo=express&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-27.x-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Docker Compose](https://img.shields.io/badge/Docker_Compose-2.x-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+Калькулятор для расчёта стоимости продуктов и услуг 1С.
 
 ---
 
-## 📁 Структура проекта
+## Технологии
+
+- Node.js 20
+- Express
+- PostgreSQL 16
+- Docker
+- Docker Compose
+
+---
+
+## Структура проекта
+calculator2/
+├── app.js
+├── package.json
+├── docker-compose.yml
+├── Dockerfile
+├── .dockerignore
+├── .env
+├── init.sql
+├── public/
+│ ├── calculator.html
+│ ├── admin-login.html
+│ ├── admin-dashboard.html
+│ ├── script.js
+│ ├── admin.js
+│ └── style.css
+└── server/
+└── database/
+└── init.sql
+
+text
+
+---
+
+## Запуск
+
+### 1. Клонировать репозиторий
+```bash
+git clone https://github.com/AYURKA03/calculator2.git
+cd calculator2
+2. Создать файл .env
+env
+DB_HOST=host.docker.internal
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=2441
+DB_NAME=calculator
+PORT=3000
+3. Запустить PostgreSQL и создать базу данных
+Выполнить скрипт init.sql через pgAdmin.
+
+4. Запустить приложение
+bash
+docker compose up -d --build
+5. Открыть в браузере
+text
+http://localhost:8082
+Админ-панель:
+
+text
+http://localhost:8082/admin-login.html
+Логин: admin
+Пароль: admin123
+
+Что делает
+Показывает список продуктов 1С
+
+Считает стоимость с учётом внедрения
+
+Облачные тарифы
+
+Тарифы ИТС
+
+Сервисы портала
+
+Генерирует коммерческое предложение в HTML
+
+Админ-панель для управления всеми разделами
+
+Команда
+Зелент Роман — backend, БД, документация
+
+Дондоков Аюр — frontend, дизайн, тестирование
+
+Для чего
+Учебный проект по практике.
