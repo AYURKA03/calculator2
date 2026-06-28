@@ -16,6 +16,7 @@
 
 ## Структура проекта
 calculator2/
+
 ├── app.js
 ├── package.json
 ├── docker-compose.yml
