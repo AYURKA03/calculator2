@@ -8,9 +8,9 @@
 
 - Node.js 20
 - Express
-- PostgreSQL 16
+- PostgreSQL 18
 - Docker
-- Docker Compose
+- HTML/CSS/JavaScript
 
 ---
 
