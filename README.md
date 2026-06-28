@@ -19,23 +19,23 @@
 ```text
 calculator2/
 |
-├── app.js
-├── package.json
-├── docker-compose.yml
-├── Dockerfile
-├── .dockerignore
-├── .env
-├── init.sql
-├── public/
+├── public/               
 │   ├── calculator.html
 │   ├── admin-login.html
 │   ├── admin-dashboard.html
 │   ├── script.js
 │   ├── admin.js
 │   └── style.css
-└── server/
-    └── database/
-        └── init.sql
+├── server/               
+│   ├── app.js
+│   ├── package.json
+│   ├── .env
+│   ├── init.sql
+│   └── database/
+│       └── init.sql
+├── docker-compose.yml
+├── Dockerfile
+└── .dockerignore
 ```
 
 ---
@@ -74,7 +74,7 @@ http://localhost:8082/admin-login.html
 
 ---
 
-##Какие функции выполняет сайт:
+## Какие функции выполняет сайт:
 
 - Показывает список продуктов 1С
 - Считает стоимость с учётом внедрения
