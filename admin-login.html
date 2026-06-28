@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход в админ-панель</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="admin-login">
+            <h2>Вход в админ-панель</h2>
+            <div id="error-message" class="error">Неверный логин или пароль</div>
+            <div id="success-message" class="success">Вход выполнен! Перенаправление...</div>
+            <input type="text" id="username" placeholder="Логин" value="admin" />
+            <input type="password" id="password" placeholder="Пароль" value="admin123" />
+            <button class="btn-primary" id="login-btn">Войти</button>   
+        </div>
+    </div>
+
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        const errorEl = document.getElementById('error-message');
+        const successEl = document.getElementById('success-message');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        async function login() {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!username || !password) {
+                errorEl.textContent = 'Заполните все поля';
+                errorEl.style.display = 'block';
+                successEl.style.display = 'none';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    errorEl.style.display = 'none';
+                    successEl.style.display = 'block';
+                    setTimeout(() => {
+                        window.location.href = '/admin-dashboard.html';
+                    }, 1000);
+                } else {
+                    errorEl.textContent = data.error || 'Неверный логин или пароль';
+                    errorEl.style.display = 'block';
+                    successEl.style.display = 'none';
+                }
+            } catch (error) {
+                errorEl.textContent = 'Ошибка подключения к серверу';
+                errorEl.style.display = 'block';
+                successEl.style.display = 'none';
+            }
+        }
+
+        loginBtn.addEventListener('click', login);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') login();
+        });
+    </script>
+</body>
+</html>

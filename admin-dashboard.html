@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ-панель</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="admin-header">
+            <h1>Админ-панель</h1>
+            <button class="logout-btn" id="logout-btn">Выйти</button>
+        </div>
+
+        <!-- Статистика -->
+        <div class="admin-stats" id="stats-container">
+            <div class="stat">
+                <div class="number" id="total-products">0</div>
+                <div class="label">Всего продуктов</div>
+            </div>
+            <div class="stat">
+                <div class="number" id="total-cloud">0</div>
+                <div class="label">Облачных тарифов</div>
+            </div>
+            <div class="stat">
+                <div class="number" id="total-its">0</div>
+                <div class="label">Тарифов ИТС</div>
+            </div>
+            <div class="stat">
+                <div class="number" id="total-portal">0</div>
+                <div class="label">Сервисов портала</div>
+            </div>
+        </div>
+
+        <!-- Вкладки -->
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="products">Продукты</button>
+            <button class="tab-btn" data-tab="cloud">Облачные тарифы</button>
+            <button class="tab-btn" data-tab="its">Тарифы ИТС</button>
+            <button class="tab-btn" data-tab="portal">Сервисы портала</button>
+        </div>
+
+        <!-- Панель: Продукты -->
+        <div class="admin-panel active" id="panel-products">
+            <button class="add-btn" id="add-product-btn">+ Добавить продукт</button>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Категория</th>
+                        <th>Цена</th>
+                        <th>Ед.</th>
+                        <th>Статус</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="products-table-body">
+                    <tr><td colspan="7" style="text-align:center;color:#888;">Загрузка...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Панель: Облачные тарифы -->
+        <div class="admin-panel" id="panel-cloud">
+            <button class="add-btn" id="add-cloud-btn">+ Добавить облачный тариф</button>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Цена (₽/РМ/мес)</th>
+                        <th>Мин. РМ</th>
+                        <th>Приложения</th>
+                        <th>Статус</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="cloud-table-body">
+                    <tr><td colspan="7" style="text-align:center;color:#888;">Загрузка...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Панель: Тарифы ИТС -->
+        <div class="admin-panel" id="panel-its">
+            <button class="add-btn" id="add-its-btn">+ Добавить тариф ИТС</button>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Тип</th>
+                        <th>Период (мес)</th>
+                        <th>Цена (₽)</th>
+                        <th>Льготная (₽)</th>
+                        <th>Статус</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="its-table-body">
+                    <tr><td colspan="8" style="text-align:center;color:#888;">Загрузка...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Панель: Сервисы портала -->
+        <div class="admin-panel" id="panel-portal">
+            <button class="add-btn" id="add-portal-btn">+ Добавить сервис портала</button>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                        <th>Ед.</th>
+                        <th>Статус</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="portal-table-body">
+                    <tr><td colspan="7" style="text-align:center;color:#888;">Загрузка...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Модальное окно (универсальное) -->
+    <div class="modal-overlay" id="admin-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Добавить</h2>
+            <div id="modal-body"></div>
+            <div class="modal-actions">
+                <button class="save-btn" id="modal-save">Сохранить</button>
+                <button class="cancel-btn" id="modal-cancel">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
